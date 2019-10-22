@@ -1,5 +1,4 @@
----
-layout: post
-title: Here is some of my brain
----
+theme: jekyll-theme-minimal
+
+Here is some of my brain
 
