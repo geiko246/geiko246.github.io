@@ -1,6 +1,6 @@
     /*
     Flaticon icon font: Flaticon
-    Creation date: 03/04/2019 06:02
+    Creation date: 24/09/2019 09:05
     */
 
     @font-face {
@@ -37,16 +37,22 @@
   font-smoothing: antialiased;
     }
 
-    .flaticon-startup:before { content: "\f100"; }
-.flaticon-graphic-design:before { content: "\f101"; }
-.flaticon-settings:before { content: "\f102"; }
-.flaticon-idea:before { content: "\f103"; }
-.flaticon-smartphone:before { content: "\f104"; }
-.flaticon-head:before { content: "\f105"; }
+    .flaticon-lotus:before { content: "\f100"; }
+.flaticon-candle:before { content: "\f101"; }
+.flaticon-spa:before { content: "\f102"; }
+.flaticon-stone:before { content: "\f103"; }
+.flaticon-massage:before { content: "\f104"; }
+.flaticon-rose:before { content: "\f105"; }
+.flaticon-beauty-treatment:before { content: "\f106"; }
+.flaticon-spa-1:before { content: "\f107"; }
+.flaticon-relax:before { content: "\f108"; }
     
-    $font-Flaticon-startup: "\f100";
-    $font-Flaticon-graphic-design: "\f101";
-    $font-Flaticon-settings: "\f102";
-    $font-Flaticon-idea: "\f103";
-    $font-Flaticon-smartphone: "\f104";
-    $font-Flaticon-head: "\f105";
+    $font-Flaticon-lotus: "\f100";
+    $font-Flaticon-candle: "\f101";
+    $font-Flaticon-spa: "\f102";
+    $font-Flaticon-stone: "\f103";
+    $font-Flaticon-massage: "\f104";
+    $font-Flaticon-rose: "\f105";
+    $font-Flaticon-beauty-treatment: "\f106";
+    $font-Flaticon-spa-1: "\f107";
+    $font-Flaticon-relax: "\f108";
