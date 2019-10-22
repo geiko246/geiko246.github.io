@@ -1,2 +1,2 @@
-# geiko246.github.io
+# less-than-three.github.io
 My brain on a site
