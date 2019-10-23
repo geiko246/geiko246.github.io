@@ -77,14 +77,50 @@
 
     <!-- IMU FILTERING -->
 
-    <section class="ftco-section bg-dark" id="imu_filtering">
+    <section class="ftco-section bg-dark js-fullheight" id="imu_filtering">
       <div class="container">
         <div class="row">
           <div class="col-md-12 heading-title">
             <h3 class="text-light">IMU Filtering</h3>
           </div>
         </div>
-      </div>
+        <div class="row">
+          <div class="col-7">
+            <p class="text-light">
+              My first main task on the team is to filter the data that this IMU gives back to obtain
+              an accurate reading for the acceleration of the pod. We'd also like to use the acceleration
+              for an approximate solution for velocity.
+              An approach suggested by the Avionics lead was to use quaternions and rotate the gravity vector iteratively
+              so that we can remove it accurately for all time.
+            </p>
+          </div>
+          <div class="col">
+              <img src="images/imu-memsense.png" style="display: block;margin-left: auto;margin-right: auto;" width="191" height="137" hspace="0">
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col">
+            <img src="images/imu-plots-deg90W-npW.png" width="606" height="280" style="float:left;">
+          </div>
+          <div class="col">
+            <p class="text-light">
+              But, as you can see it's a little noisy and error prone...<br><br>
+              The current approaches to filtering are:<br>
+              <ol class="text-light">
+                <li> Thresholding higher-order derivatives of motion </li>
+                <li> Using the accelerometer to stop recording if not in motion</li>
+                <li> Curve fitting</li>
+                <li> Complementary Filter</li>
+              </ol>
+              <br>
+              <!-- <a href="tylers-tidings.html"> -->
+                <button type="button" style="display: block;margin-left: auto;margin-right: auto;"
+                        class="btn btn-outline-light disabled">More Info</button>
+              <!-- </a> -->
+            </p>
+          </div>
+        </div>
     </section>
 
     <!--* * * * * * * * * * * * SSL stuff * * * * * * * * * * * *-->
