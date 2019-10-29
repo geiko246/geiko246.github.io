@@ -60,6 +60,7 @@
                     <a href="#imu_filtering" class="dropdown-item">IMU Filtering</a>
                     <h6 class="dropdown-header">Space Systems Lab</h6>
                     <a href="#pxl_brakes" class="dropdown-item">PXL Brakes</a>
+                    <a href="#power_supply_gui" class="dropdown-item">Power Supply GSE Software</a>
                     <h6 class="dropdown-header">Misc</h6>
                     <a href="#" class="dropdown-item disabled">Scuba Certification</a>
                   </div>
@@ -75,6 +76,10 @@
       <div class="row description align-items-center justify-content-center">
 				<div class="col-md-8 text-center">
           <h1>Welcome to Tyler's Tidings</h1>
+          <p>
+            I don't really know what this page is for but I want to put stuff I've worked on here
+            (plus some stuff I want to work on).
+          </p>
         </div>
       </div>
     </section>
@@ -93,7 +98,9 @@
         <div class="row">
           <div class="col-7">
             <p class="text-light">
-              My first main task on the team is to filter the data that this IMU gives back to obtain
+              <b>Keywords: Applied Mathematics, MATLAB, Kalman Filter </b>
+              <br><br>
+              My first main task on UMD Loop is to filter the data that this IMU gives back to obtain
               an accurate reading for the acceleration of the pod. We'd also like to use the acceleration
               for an approximate solution for velocity.
               An approach suggested by the Avionics lead was to use quaternions and rotate the gravity vector iteratively
@@ -112,12 +119,13 @@
           <div class="col">
             <p class="text-light">
               But, as you can see it's a little noisy and error prone...<br><br>
-              The current approaches to filtering are:<br>
+              Currently being looked into:<br>
               <ol class="text-light">
-                <li> Thresholding higher-order derivatives of motion </li>
+                <li> <strike>Thresholding higher-order derivatives of motion</strike> </li>
                 <li> Using the accelerometer to stop recording if not in motion</li>
                 <li> Curve fitting</li>
                 <li> Complementary Filter</li>
+                <li> Kalman Filter</li>
               </ol>
               <br>
               <!-- <a href="tylers-tidings.html"> -->
@@ -131,13 +139,74 @@
 
     <!--* * * * * * * * * * * * SSL stuff * * * * * * * * * * * *-->
 
+    <hr>
+
     <!-- PXL Brakes -->
 
     <section class="ftco-section bg-info" id="pxl_brakes">
-      <div class="container">
+      <div class="container text-light">
         <div class="row">
           <div class="col-md-12 heading-title">
             <h3 class="text-light">PXL Brakes</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-7">
+            <p>
+              <b>Keywords: C++, ROS, CAN/CANopen, motor servo</b>
+              <br><br>
+              This is my first real low-level software task at the Space Systems Laboratory.
+              I was to enable brake control on the AMC controllers which are currently in the joints of the Ranger
+              robot. These brakes are connected to digital output but controlling them through the master meant
+              that they had to be user bit masked. Not a challenging task, but since these motor controller are using CANopen,
+              I had to read through a lot of documentation on CANopen and CAN in general.
+              Oh god... the documentation.
+              But the reading was really not necessary since we could use kacanopen from ROS. Nevertheless, it's
+              good to know, you know?
+              I finished the task with a server-side ROS service to engage and disengage the brakes as desired.
+            </p>
+          </div>
+          <div class="col">
+            <!--<img src="https://electromate.files.wordpress.com/2012/05/amc-dpranie-015s400.jpg" class="centerize" width="150" height="270">-->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr>
+
+    <section class="ftco-section bg-info" id="power_supply_gui">
+      <div class="container text-light">
+        <div class="row">
+          <div class="col-md-12 heading-title">
+            <h3 class="text-light">Power Supply GSE Software</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-9">
+            <p>
+              <b>Keywords: ROS, QT, GUI, Python, multithreading, TCP/IP, Power Supply Communication</b>
+              <br>
+              <br>
+              This one was my first ever project in the lab. My task was to develop software to allow
+              the robot operator to communicate with the power supply connected to the robot.
+              This was really my introduction to ROS and QT GUI development. I'm pretty lucky that I
+              was exposed to so much on my first project. The software for this was particularly finicky
+              since it had to be configurable to any number of available power supplies. I ended up taking
+              full advantage of Object-Oriented-Programming by setting up abstractions for the types of
+              power supplies since they all communicated and behaved differently - so perfect for OOP!
+              I even had to make a (sort-of since it was in Python) multi-threaded implementation to have
+              the power supply object publish in ROS while locking over the TCP/IP connection since only
+              one power supply could be TCP'd at a time.
+              <br><br>
+              Here's what the GUI looked like:
+              <br>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col align-self-center">
+            <img src="images/supply_scrnshot.png" width="900" height="300">
           </div>
         </div>
       </div>
