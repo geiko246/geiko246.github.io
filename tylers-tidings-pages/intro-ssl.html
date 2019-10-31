@@ -74,7 +74,7 @@
             <br>
             <p align="center"style="display: block;margin-left: auto;margin-right: auto;">
               If you're here, I most likely recommended you see this page to get started on learning lab stuff. Here's
-              my attempt to disseminate as much experience as possible.
+              my attempt to disseminate all my experience in as few words as possible.
             </p>
         </div>
     </section>
@@ -109,6 +109,135 @@
             </div>
           <div class="col centerize">
             <img src="https://tokyotechies.com/wp-content/uploads/2018/03/ros_logo.png" id="ros_pic" width="302" height="77" align="right" hspace="10">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <div class="row">
+              <div class="col-md-12 heading-title">
+                <h3>Preliminary Tools</h3>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 heading-title">
+                <h4><b>Linux & Command Line</b></h4>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-7">
+                  <p>
+                    Before you begin developing, you need to feel comfortable moving through
+                    a UNIX-based filesystem. If you want a full tutorial,
+                    <a href="https://ryanstutorials.net/linuxtutorial/commandline.php">this</a>
+                    is the one I used.
+                  </p>
+                  <p>
+                    These commands are your bread and butter:
+                    <ul>
+                      <li> <font size="3px"><code>cd</code></font> <i>[dir]</i> - change directory </li>
+                      <li> <font size="3px"><code>ls</code></font> <i>[dir]</i> - print directory contents </li>
+                    </ul>
+                    Congrats! Now you know how to navigate through a UNIX filesystem.
+                  </p>
+                  <p>
+                    You should also know a little about how commands are run in the terminal. Commands
+                    are convenient ways for a user to run a script or executable that isn't necessarily
+                    in your current directory. If you type the command:
+                    <font size="3"><tt><code>$env</code></tt></font> (without the $), you'll see a bunch of variables
+                    set equal to lists of directories in your filesystem. The <i>PATH</i> variable is of particular
+                    interest since this is where your shell (running terminal) looks to execute your commands. Keep
+                    this in mind when you're navigating through and using your terminal.
+                  </p>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 heading-title">
+                <h4><b>CMake</b></h4>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-7">
+                <p>
+                  If you're like me, you need to know exactly what you're doing when you do something. This was a huge
+                  problem for me when I ran into CMake, which is the make tool that ROS uses to build packages. The file
+                  can be especially confusing if you've never seen a makefile... or really even if you <i>have</i> seen
+                  one. The tool aims to make software packages compatible across any platform (platform can refer to
+                  Operating System, build tools, package version, etc. - anything that might affect how you compile/link/run
+                  your code). This is a pretty big deal
+                  for developers since they won't have to worry too much about portability when writing their code. Or when
+                  they do, it will be easier.
+                </p>
+                <p>
+                  Put simply, a makefile like CMakeLists provides a way of compiling and linking (building your code's executables
+                  so you can actually run it) without rebuilding things that don't need to be rebuilt. CMake also provides a
+                  way for your compiler to find the source dependencies (#include'd headers, library files). It might not be easy to
+                  see why you'd want this if you've only worked on projects with a couple of source files, but imagine that you had
+                  written a project that contained hundreds of sources files (or even more).
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 heading-title">
+                <h4><b>Google</b></h4>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-7">
+                <p>
+                  Honestly, my favorite tool. Don't be afraid to look up your errors or questions on Google. I don't copy and paste
+                  (anymore), but I still use a quick search to find out what others have done and if there are things already available
+                  that might make my life easier - so really just a research tool. But for beginners, take the answers
+                  with a grain of salt. It's always better to know what you're doing. After all, the stuff you write is going toward
+                  a multi-million dollar machine. Better not to leave it to some random person with a keyboard.
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 heading-title">
+                <h4><b>C++/Python</b></h4>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-7">
+                <p>
+                  As of when I'm writing this, Python 2 is being EOL'd and we haven't really heard anything from ROS about its future
+                  support. So, we're moving towards C++ for everything we write. I don't have advice on learning a programming language
+                  other than - you guessed it - doing it. But I will say this, do not let C++ be your first language. Just don't. Python
+                  isn't too great either as a first unless you just want something done, and quickly.
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 heading-title">
+                <h4><b>Git</b></h4>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-7">
+                <p>
+                  Ahh... Git. You're gonna hate it at first since you'll be worried about messing things up, but it'll really grow
+                  on you. Once you're accustomed to it, you'll want to put everything you've ever worked on inside a Git repository
+                  - even something like, I don't know, a website *cough*.
+                </p>
+                <p>
+                  Git is software for <b>version control</b>. Meaning, your code goes through several stages of continuous development and
+                  you need a good way to organize this <i>history</i> of adding, removing, and changing. If only there was a way to keep
+                  track of all your changes throughout development. Enter Git.
+                </p>
+                <p>
+                  It is said that 90% of the time spent writing code is spent editing it. And most of the time, you'll make changes that
+                  you're not to sure about or don't want in the final product. Git allows for <b>branching</b> off the main development
+                  history. This means that you can make changes that won't affect a working model that you might already have and can
+                  test this new branch freely. Better yet, Git not only allows <i>you</i> to make these branches, but <i>any</i> number
+                  of developers to do this in parallel. Imagine if there wasn't something like this - there might be something like a
+                  crowd of software engineers at Google or Amazon clustered around the same keyboard trying to put their code in. There is
+                  plenty of more features associated with Git, but it's really more of a learn-as-you-go type of tool. Ugh, I'm starting
+                  to doubt if I'm really even helping. But truthfully, this tool is one that arises out of necessity, so it really only makes
+                  sense that you learn it as you need it. And that will be often.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -151,13 +280,7 @@
           </div>
         </div>
 
-        <div class="row">
-          <div class="col">
-            <p>
 
-            </p>
-          </div>
-        </div>
         <div class="row">
           <div class="col">
             <img class="centerize" src="https://www.researchgate.net/profile/Gennaro_Raiola/publication/321504047/figure/fig2/AS:568087633240068@1512454054579/ROS-Control-overview.png" width="618" height="470" hspace="10">
