@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>IMU Progress</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Prata&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="../css/animate.css">
+
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+
+    <link rel="stylesheet" href="../css/aos.css">
+
+    <link rel="stylesheet" href="../css/ionicons.min.css">
+
+		<link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
+		<link rel="stylesheet" href="../css/nouislider.css">
+
+
+    <link rel="stylesheet" href="../css/flaticon.css">
+    <link rel="stylesheet" href="../css/icomoon.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="stylesheet" href="../css/user_css/intro-ssl.css">
+
+  </head>
+  <body>
+
+  <!-- BEGIN navbar -->
+
+  <div class="container-fluid px-md-0">
+    <div class="row no-gutters">
+      <div class="col-md-12">
+        <nav class="navbar navbar-expand-lg navbar-light bg-info ftco_navbar bg-info">
+          <a class="navbar-brand" href="../index.html">Back to Me</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarsExample04">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item d-flex">
+                <a class="nav-link d-flex align-items-center" href="../tylers-tidings.html">Tidings Home <span class="sr-only">(current)</span></a>
+              </li>
+              <!-- <li class="nav-item d-flex">
+                <a class="nav-link d-flex align-items-center" href="#">Link</a>
+              </li> -->
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- END navbar -->
+
+  <section class="ftco-section bg-light" id="imu_filtering">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 heading-title">
+          <div class="col">
+              <img src="../images/imu-memsense.png" style="display: block;margin-left: auto;margin-right: auto;" width="191" height="137" hspace="0">
+          </div>
+          <br>
+          <h3 align="center">IMU Data Extraction for Hyperloop Pod</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-7 centerize">
+          <br>
+          <!-- <p align="center"style="display: block;margin-left: auto;margin-right: auto;">
+            My progress on one of the most interesting projects I have done thus far.
+          </p> -->
+      </div>
+  </section>
+
+  <section class="ftco-section pb-0">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 heading-title">
+          <h1>Kalman Filter</h1>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-7">
+            <p>
+              Learning about the Kalman Filter is one of the most interesting projects I have ever landed on. The goal
+              is to use the onboard IMU and extract the necessary kinematic measurements (position, velocity, acceleration).
+              The challenge is that the IMU will tilt, which corrupts the acceleration readings due to the acceleration of
+              gravity, and the IMU is particularly noisy and will drift over time.
+            </p>
+          </div>
+      </div>
+      <div class ="row">
+        <div class="col">
+          <p><img src="../images/imu-plots-deg90W-npW.PNG" width="606" height="280" style="float:left;"></p>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-7">
+            <p>
+              <br>
+              In the above image, the plot on the left is the acceleration in the x, y, and z axis of test data created using only
+              angular velocity data and quaternion rotations (the dataset involved only a 90 degree rotation about an axis).
+              The plot on the right is the acceleration while the IMU is at rest.
+              The noticeable drift illustrates the consequences of floating point error and noise created in iterative computation.
+              These are things we aim to resolve in order to get an accurate measure of velocity from the IMU.
+            </p>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p><img src="../images/imu-kalman1-plot.PNG" width="606" height="280" style="float:left;"></p>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-7">
+            <p>
+              <br>
+              Above are two plots comparing raw IMU acceleration data to a Kalman Filtered version.
+              <!-- <a href="https://www.bzarg.com/p/how-a-kalman-filter-works-in-pictures/">this guy</a>-->
+              The tested dataset was a series of linear movements along an axis. There is noticeable bias or
+              perhaps static offset with the filtered version.
+              I am continuing to look into methods to tune <font size="3"><code>Q</code></font> in
+              the prediction step.
+            </p>
+          </div>
+      </div>
+    </div>
+  </section>
+
+<br><br>
+
+
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.easing.1.3.js"></script>
+    <script src="../js/jquery.waypoints.min.js"></script>
+    <script src="../js/jquery.stellar.min.js"></script>
+    <script src="../js/owl.carousel.min.js"></script>
+    <script src="../js/jquery.magnific-popup.min.js"></script>
+    <script src="../js/aos.js"></script>
+
+    <script src="../js/nouislider.min.js"></script>
+    <script src="../js/moment-with-locales.min.js"></script>
+    <script src="../js/bootstrap-datetimepicker.min.js"></script>
+    <script src="../js/main.js"></script>
+    </body>
+  </html>
